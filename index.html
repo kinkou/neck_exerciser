@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Neck Exerciser</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name='apple-mobile-web-app-title' content='Neck Exerciser'>
+
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="icon-192.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="manifest.webmanifest">
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: monospace;
+      }
+
+      html {
+        padding: 20px 20px 0 20px;
+        text-align: center;
+        background-color: white;
+        color: black;
+      }
+
+      button {
+        font-weight: bold;
+        margin-bottom: 20px;
+        font-size: 18px;
+        padding: 10px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+    </style>
+
+    <script type="text/javascript">
+
+      function say(text) {
+        var s = new SpeechSynthesisUtterance();
+        s.lang = 'en-US';
+        s.rate = 1;
+        s.text = text;
+        speechSynthesis.speak(s);
+      }
+
+      function step(text, time) {
+        say(text);
+        return new Promise(
+          function(res, rej) {
+            setTimeout(function() { res() }, time);
+          }
+        );
+      }
+
+      function next(text, time) {
+        return step.bind(this, text, time);
+      }
+
+      function main() {
+        t = 30000;
+        step('Start, round 1!', t).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now, round 2!', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now, round 3!', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now, round 4!', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now, round 5!', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Change now.', t)).
+        then(next('Finished!', t));
+      }
+
+    </script>
+  </head>
+  <body>
+    <h1>Do your neck exercises every day!</h1>
+    <button onclick="javascript:main();" type="button">Start</button>
+    <article>
+      <h2>What's this?</h2>
+      <p>This is a hands-free speaking timer for neck strengthening exercises. It measures the time between the exercises and rounds so you don't have to.</p>
+      <p>You can save it as a webapp on your phone desktop.</p>
+
+      <h2>What are the neck strengthening exercises?</h2>
+      <p>They are simple exercises to make your neck muscles stronger.</p>
+
+      <h2>Why?</h2>
+      <p>If you often have vertigos or headaches chances are your intervertebral discs got so thin that the blood vessels and nerves inside your neck got affected.</p>
+      <p>These exercises stimulate the neck muscles to stay in tone, effectively relieving the symptoms.</p>
+
+      <h2>Are they effective?</h2>
+      <p>Hell yeah. Start doing these every day and you'll notice the difference in a few days.</p>
+
+      <h2>Who says?</h2>
+      <p>The neurologists.</p>
+
+      <h2>Ok, how do I use this?</h2>
+      <p>Exercise 1: Press moderately with your <b>forehead</b> against your palm.</p>
+      <p>Exercise 2: Press moderately with the <b>right side of your head</b> against your palm.</p>
+      <p>Exercise 3: Press moderately with the <b>back of your head</b> against your palm.</p>
+      <p>Exercise 4: Press moderately with the <b>left side of your head</b> against your palm.</p>
+      <p><b>Make sure your neck muscles are tensing up every time!</b></p>
+      <p>There are 5 rounds. No need to do them all.</p>
+      <p>Each exercise takes 30 seconds. One round takes about 2 minutes.</p>
+
+      <h2>My hand gets tired quickly!</h2>
+      <p>Mine too. Use a rubber band, a wall, anything. Get creative.</p>
+      <p>I use a rubber band attached to a pull-up bar and a bag strap with a shoulder pad to make it easy on the head skin and hair.</p>
+
+      <h2>How do I start the timer over?</h2>
+      <p>Just reload the page.</p>
+
+      <h2>Thank you!</h2>
+      <p>You're welcome.</p>
+    </article>
+  </body>
+</html>

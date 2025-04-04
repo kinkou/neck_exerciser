@@ -1,0 +1,13 @@
+{
+  "name": "Neck Exerciser",
+  "description": "A speaking timer for neck strengthening exercises",
+  "start_url": "http://kinkou.ru/neck-exerciser",
+  "display": "minimal-ui",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
